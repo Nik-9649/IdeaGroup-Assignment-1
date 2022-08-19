@@ -14,8 +14,7 @@ export default function CustomStyledCard({
         borderRadius: 5,
       }}
       container
-      marginTop={2}
-      boxShadow={5}
+      marginTop={0.5}
     >
       <Card
         variant="outlined"

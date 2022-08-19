@@ -13,11 +13,13 @@ export default function TransactionList() {
     <Grid
       sx={{
         borderRadius: 5,
-        maxHeight: 720,
+        maxHeight: 254,
       }}
       container
-      marginLeft={5}
-      marginTop={10}
+      marginLeft={2}
+      marginRight={2}
+      marginTop={2}
+      marginBottom={1}
       boxShadow={5}
     >
       <Card

@@ -37,14 +37,16 @@ export default function BalanceLimitComponent() {
             borderRadius: 5,
           }}
           container
-          marginLeft={5}
-          marginTop={10}
+          marginLeft={2}
+          marginRight={2}
+          marginTop={2}
+          marginBottom={1}
           boxShadow={5}
         >
           <Card
             sx={{
-              marginLeft: 8,
-              marginRight: 2,
+              marginLeft: 7,
+              marginRight: 3,
               marginTop: 2,
               marginBottom: 2,
             }}
@@ -67,8 +69,10 @@ export default function BalanceLimitComponent() {
             borderRadius: 5,
           }}
           container
-          marginLeft={5}
+          marginLeft={2}
+          marginRight={2}
           marginTop={1}
+          marginBottom={2}
           boxShadow={5}
         >
           <Card

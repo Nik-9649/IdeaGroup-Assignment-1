@@ -5,10 +5,11 @@ export default function PageMenu() {
   return (
     <Grid
       container
-      marginRight={5}
-      marginTop={10}
+      marginRight={3}
+      marginLeft={3}
+      marginTop={2}
       boxShadow={5}
-      sx={{ maxWidth: 270, maxHeight: 720, borderRadius: 5 }}
+      sx={{ maxWidth: 270, maxHeight: 546, borderRadius: 5 }}
     >
       <Grid item marginLeft={1} marginRight={1} marginTop={1} marginBottom={2}>
         <CustomStyledCard midValue="Dashboard"></CustomStyledCard>

@@ -12,6 +12,7 @@ export default function BalanceLimitComponent() {
   const [label, setLabel] = useState("Amount");
   const [buttonState, setButtonState] = useState(true);
 
+  // Callback on amount change to decrease the balance
   const handleChange = useCallback(
     props => {
       if (currentBalance > 0) {

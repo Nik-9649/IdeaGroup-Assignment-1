@@ -11,6 +11,7 @@ export default function SendMoney({
   setButtonState,
 }) {
   const [empty, setEmpty] = useState(null);
+  // Function to get Data from Amount input field and set new amount
   function getData(val) {
     const result = val.target.value.replace(/\D/g, "");
     setAmount(result);

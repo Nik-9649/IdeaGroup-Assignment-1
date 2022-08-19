@@ -12,7 +12,8 @@ export default function SendMoney({
 }) {
   const [empty, setEmpty] = useState(null);
   function getData(val) {
-    setAmount(val.target.value);
+    const result = val.target.value.replace(/\D/g, "");
+    setAmount(result);
     setLabel("Amount");
     setButtonState(false);
   }

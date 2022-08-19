@@ -1,3 +1,6 @@
+import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
+import ReceiptLongRoundedIcon from "@mui/icons-material/ReceiptLongRounded";
+import AccountBoxRoundedIcon from "@mui/icons-material/AccountBoxRounded";
 import { Grid } from "@mui/material";
 import CustomStyledCard from "./StylizedCard";
 
@@ -12,9 +15,47 @@ export default function PageMenu() {
       sx={{ maxWidth: 270, maxHeight: 546, borderRadius: 5 }}
     >
       <Grid item marginLeft={1} marginRight={1} marginTop={1} marginBottom={2}>
-        <CustomStyledCard midValue="Dashboard"></CustomStyledCard>
-        <CustomStyledCard midValue="Paybill"></CustomStyledCard>
-        <CustomStyledCard midValue="Account"></CustomStyledCard>
+        <CustomStyledCard
+          icon={
+            <DashboardRoundedIcon
+              sx={{
+                display: { xs: "none", md: "flex" },
+                mr: 2,
+                color: "white",
+                marginTop: 1.7,
+              }}
+            />
+          }
+          href="./DashboardPage"
+          component="a"
+          midValue="Dashboard"
+        ></CustomStyledCard>
+        <CustomStyledCard
+          icon={
+            <ReceiptLongRoundedIcon
+              sx={{
+                display: { xs: "none", md: "flex" },
+                mr: 2,
+                color: "white",
+                marginTop: 1.7,
+              }}
+            />
+          }
+          midValue="Paybill"
+        ></CustomStyledCard>
+        <CustomStyledCard
+          icon={
+            <AccountBoxRoundedIcon
+              sx={{
+                display: { xs: "none", md: "flex" },
+                mr: 2,
+                color: "white",
+                marginTop: 1.7,
+              }}
+            />
+          }
+          midValue="Account"
+        ></CustomStyledCard>
       </Grid>
     </Grid>
   );

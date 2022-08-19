@@ -7,6 +7,8 @@ export default function CustomStyledCard({
   midValue = [null],
   subs,
   fontsize = [24],
+  icon,
+  href,
 }) {
   return (
     <Grid
@@ -49,9 +51,15 @@ export default function CustomStyledCard({
           container
           justifyContent="center"
           marginTop={2}
+          spacing={1}
+          columns={2}
         >
-          <Grid item>
+          <Grid item xs={"auto"}>
+            {icon}
+          </Grid>
+          <Grid item xs={"auto"}>
             <Typography
+              href={href}
               marginTop={1}
               color="white"
               variant="subtitle1"

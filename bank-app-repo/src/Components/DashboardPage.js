@@ -1,14 +1,27 @@
 import { Outlet, Link } from "react-router-dom";
 import BalanceLimitComponent from "./Balance-Limit-Component";
-import { Avatar, Icon } from "@mui/material";
+import { Avatar } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 import { AccountBalance } from "@mui/icons-material";
+import { Menu, MenuItem } from "@mui/material";
+import { red } from "@mui/material/colors";
+import { useState } from "react";
 
 const DashboardPage = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <>
       <Container>
@@ -52,14 +65,44 @@ const DashboardPage = () => {
                 item
                 marginTop={1}
                 marginbuttom={1}
-                marginLeft={90}
-                marginRight={1}
+                marginLeft={97.5}
                 flexGrow={0}
                 xs={"auto"}
               >
-                <IconButton boxShadow={5} alt="User Account">
-                  <Avatar></Avatar>
-                </IconButton>
+                <Grid>
+                  <IconButton
+                    onClick={handleClick}
+                    boxShadow={5}
+                    alt="User Account"
+                  >
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="user profile"
+                    >
+                      M
+                    </Avatar>
+                  </IconButton>
+                  <Menu
+                    id="simple-menu"
+                    getContentAnchorEl={null}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "left",
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "left",
+                    }}
+                    keepMounted
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                  >
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>Settings</MenuItem>
+                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  </Menu>
+                </Grid>
               </Grid>
             </Grid>
           </AppBar>

@@ -1,3 +1,4 @@
+import { Menu, MenuItem } from "@mui/material";
 import {
   Avatar,
   Card,
@@ -9,8 +10,19 @@ import {
 import { red } from "@mui/material/colors";
 import CustomStyledCard from "./StylizedCard";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { useState } from "react";
 
 export default function ProfileCard() {
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Grid
       container
@@ -24,7 +36,7 @@ export default function ProfileCard() {
         item
         marginTop={2}
         marginBottom={2}
-        marginLeft={2}
+        marginLeft={5}
         marginRight={2}
         sx={{
           bgcolor: "#1976d2",
@@ -40,6 +52,7 @@ export default function ProfileCard() {
           sx={{
             bgcolor: "#1976d2",
             borderRadius: 5,
+            marginLeft: 5,
           }}
           elevation={100}
         >
@@ -50,9 +63,33 @@ export default function ProfileCard() {
               </Avatar>
             }
             action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
+              <Grid>
+                <IconButton onClick={handleClick} aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+                <Menu
+                  id="simple-menu"
+                  getContentAnchorEl={null}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}>Add Profile Picture</MenuItem>
+                  <MenuItem onClick={handleClose}>Edit User Name</MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    Increase Credit Limit
+                  </MenuItem>
+                </Menu>
+              </Grid>
             }
             title="Muhammad"
             subheader="Member since September 14, 2016"

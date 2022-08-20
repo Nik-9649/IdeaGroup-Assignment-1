@@ -1,4 +1,4 @@
-import { Avatar } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -38,7 +38,7 @@ const Profile = () => {
                     variant="h6"
                     noWrap
                     component="a"
-                    href="/"
+                    href="/profile"
                     sx={{
                       mr: 2,
                       display: { xs: "none", md: "flex" },
@@ -59,9 +59,11 @@ const Profile = () => {
                 marginRight={1}
                 xs={"auto"}
               >
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="user profile">
-                  M
-                </Avatar>
+                <IconButton>
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label="user profile">
+                    M
+                  </Avatar>
+                </IconButton>
               </Grid>
             </Grid>
           </AppBar>
@@ -79,6 +81,7 @@ const Profile = () => {
           <ProfilePageContent />
         </Grid>
       </Container>
+      <Outlet />
     </>
   );
 };

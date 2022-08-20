@@ -31,6 +31,7 @@ export default function PageMenu() {
           midValue="Dashboard"
         ></CustomStyledCard>
         <CustomStyledCard
+          component="a"
           icon={
             <ReceiptLongRoundedIcon
               sx={{

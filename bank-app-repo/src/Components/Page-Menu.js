@@ -26,7 +26,7 @@ export default function PageMenu() {
               }}
             />
           }
-          href="./DashboardPage"
+          href="/"
           component="a"
           midValue="Dashboard"
         ></CustomStyledCard>
@@ -44,6 +44,8 @@ export default function PageMenu() {
           midValue="Paybill"
         ></CustomStyledCard>
         <CustomStyledCard
+          component="a"
+          href="/profile"
           icon={
             <AccountBoxRoundedIcon
               sx={{

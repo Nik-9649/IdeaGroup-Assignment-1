@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import BalanceLimitComponent from "./Balance-Limit-Component";
 import { Avatar, Icon } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
@@ -7,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { Container } from "@mui/system";
 import { AccountBalance } from "@mui/icons-material";
 
-export default function DashboardPage() {
+const DashboardPage = () => {
   return (
     <>
       <Container>
@@ -76,6 +77,9 @@ export default function DashboardPage() {
           <BalanceLimitComponent />
         </Grid>
       </Container>
+      <Outlet />
     </>
   );
-}
+};
+
+export default DashboardPage;

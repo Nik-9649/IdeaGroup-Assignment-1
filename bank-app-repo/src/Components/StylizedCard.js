@@ -9,6 +9,7 @@ export default function CustomStyledCard({
   fontsize = [24],
   icon,
   href,
+  component,
 }) {
   return (
     <Grid
@@ -59,6 +60,7 @@ export default function CustomStyledCard({
           </Grid>
           <Grid item xs={"auto"}>
             <Typography
+              component={component}
               href={href}
               marginTop={1}
               color="white"

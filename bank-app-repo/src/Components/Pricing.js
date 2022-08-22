@@ -88,7 +88,7 @@ function PricingContent() {
     // PS: keys of the object are same as its index so they are being used as index
     for (const key of Object.keys(players)) {
       // pushing the sorted information into the tiers array
-      // TODO: still have to figure out how to assign a string "N/A" to the data that isnt available
+      // // TODO: still have to figure out how to assign a string "N/A" to the data that isnt available
       tiers.push({
         title: players[key].firstName ? players[key].firstName : "N/A",
         price: players[key].isCaptain === true ? "Captain" : "Player",

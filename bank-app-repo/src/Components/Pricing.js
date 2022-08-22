@@ -101,6 +101,7 @@ function PricingContent() {
         ],
         buttonText: "Vote",
         buttonVariant: "outlined",
+        key: players[key],
       });
     }
 
@@ -201,7 +202,7 @@ function PricingContent() {
                 // Enterprise card is full width at sm breakpoint
                 <Grid
                   item
-                  key={tier.title}
+                  key={tier.key}
                   xs={12}
                   sm={tier.title === "Enterprise" ? 12 : 6}
                   md={4}

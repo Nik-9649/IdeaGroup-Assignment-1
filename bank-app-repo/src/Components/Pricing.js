@@ -14,9 +14,7 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import Container from "@mui/material/Container";
-// import { GetPlayers } from "./service";
 import axios from "axios";
-import { color } from "@mui/system";
 
 function Copyright(props) {
   return (
@@ -109,7 +107,7 @@ function PricingContent() {
             : "N/A",
         ],
         buttonText: "Vote",
-        buttonVariant: "outlined",
+        buttonVariant: players[key].isCaptain === true ? "filled" : "outlined",
         key: players[key],
       });
     }
@@ -213,7 +211,7 @@ function PricingContent() {
                   item
                   key={tier.key}
                   xs={12}
-                  sm={tier.title === "Enterprise" ? 12 : 6}
+                  sm={tier.title === "Captain" ? 12 : 6}
                   md={4}
                 >
                   <Card>
@@ -243,7 +241,7 @@ function PricingContent() {
                       >
                         <Typography
                           component="h2"
-                          variant="h3"
+                          variant="h4"
                           color="text.primary"
                         >
                           {tier.title}

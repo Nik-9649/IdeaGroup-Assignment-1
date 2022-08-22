@@ -120,7 +120,6 @@ const DashboardPage = () => {
           <BalanceLimitComponent />
         </Grid>
       </Container>
-      <Outlet />
     </>
   );
 };

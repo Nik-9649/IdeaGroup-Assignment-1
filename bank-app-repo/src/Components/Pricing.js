@@ -16,6 +16,7 @@ import GlobalStyles from "@mui/material/GlobalStyles";
 import Container from "@mui/material/Container";
 // import { GetPlayers } from "./service";
 import axios from "axios";
+import { color } from "@mui/system";
 
 function Copyright(props) {
   return (
@@ -89,15 +90,23 @@ function PricingContent() {
       // pushing the sorted information into the tiers array
       // TODO: still have to figure out how to assign a string "N/A" to the data that isnt available
       tiers.push({
-        title: players[key].firstName,
+        title: players[key].firstName ? players[key].firstName : "N/A",
         price: players[key].isCaptain === true ? "Captain" : "Player",
         description: [
-          `Full Name: ${players[key].fullName}`,
-          `Description: ${players[key].description}`,
-          `Team: ${players[key].teamName}`,
-          `Matches Won: ${players[key].matchesWon}`,
-          `Matches Lost: ${players[key].matchesLost}`,
-          `Matches Draw: ${players[key].matchesDraw}`,
+          players[key].fullName ? `Full Name: ${players[key].fullName}` : "N/A",
+          players[key].description
+            ? `Player Description: ${players[key].description}`
+            : "N/A",
+          players[key].teamName ? `Team: ${players[key].teamName}` : "N/A",
+          players[key].matchesWon
+            ? `Matches Won: ${players[key].matchesWon}`
+            : "N/A",
+          players[key].matchesLost
+            ? `Matches Lost: ${players[key].matchesLost}`
+            : "N/A",
+          players[key].matchesDraw
+            ? `Matches Draw: ${players[key].matchesDraw}`
+            : "N/A",
         ],
         buttonText: "Vote",
         buttonVariant: "outlined",
@@ -209,7 +218,7 @@ function PricingContent() {
                 >
                   <Card>
                     <CardHeader
-                      title={tier.title}
+                      title={tier.price}
                       subheader={tier.subheader}
                       titleTypographyProps={{ align: "center" }}
                       action={tier.price === "Captain" ? <StarIcon /> : null}
@@ -237,7 +246,7 @@ function PricingContent() {
                           variant="h3"
                           color="text.primary"
                         >
-                          {tier.price}
+                          {tier.title}
                         </Typography>
                       </Box>
                       <ul>
